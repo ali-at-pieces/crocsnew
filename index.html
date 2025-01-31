@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crocodile Facts</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f0f0f0;
+        }
+
+        .container {
+            text-align: center;
+            padding: 20px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+
+        button {
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Crocodile Facts</h1>
+        <p id="fact-display">Click the button to get a fact!</p>
+        <button id="fact-button">Get Fact</button>
+    </div>
+    <script>
+        const facts = [
+            "Crocodiles are reptiles, belonging to the order Crocodilia.",
+            "They are semi-aquatic animals, spending time both in water and on land.",
+            "Crocodiles are found in tropical regions of Africa, Asia, Australia, and the Americas.",
+            "They are carnivores, primarily feeding on fish, birds, mammals, and other reptiles.",
+            "Crocodiles have powerful jaws and sharp teeth, designed for grabbing and holding prey.",
+            "They have a long lifespan, with some species living for over 70 years.",
+            "Crocodiles are known for their armored skin, which is made up of bony plates called osteoderms.",
+            "They are ambush predators, often lying in wait for their prey to come close.",
+            "Crocodiles can hold their breath for extended periods of time underwater.",
+            "There are 14 recognized species of crocodiles, each with its own unique characteristics."
+        ];
+
+        const factDisplay = document.getElementById('fact-display');
+        const factButton = document.getElementById('fact-button');
+
+        function getRandomFact() {
+            const randomIndex = Math.floor(Math.random() * facts.length);
+            return facts[randomIndex];
+        }
+
+        factButton.addEventListener('click', () => {
+            factDisplay.textContent = getRandomFact();
+        });
+    </script>
+</body>
+</html>
